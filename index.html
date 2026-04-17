@@ -31,6 +31,9 @@
       --font-latin: 'Cormorant Garamond', serif;
       --font-sans: 'Zen Kaku Gothic New', sans-serif;
       --ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+      /* ▼ ヘッダー背景画像の透明度はここで調整 */
+      --hero-image-opacity: 0.34;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -137,6 +140,34 @@
         linear-gradient(180deg, #191310 0%, var(--c-bg) 78%);
       overflow: hidden;
     }
+
+    /* ▼ 横広の背景画像を入れる場所 */
+    .hero-bg-image {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .hero-bg-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      opacity: var(--hero-image-opacity);
+      transform: scale(1.06);
+      filter: saturate(0.92) contrast(0.95);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background:
+        linear-gradient(180deg, rgba(10,9,8,.28) 0%, rgba(15,13,12,.52) 42%, rgba(15,13,12,.88) 100%);
+      pointer-events: none;
+    }
+
     .hero::after {
       content: "";
       position: absolute;
@@ -144,6 +175,7 @@
       height: 160px;
       background: linear-gradient(to top, rgba(15,13,12,1), rgba(15,13,12,0));
       pointer-events: none;
+      z-index: 2;
     }
     .hero-inner {
       position: relative;
@@ -294,11 +326,6 @@
       margin-bottom: 8px;
       font-size: 1.12rem;
     }
-    .media-card p {
-      color: rgba(250,248,245,.72);
-      font-size: .9rem;
-      margin-bottom: 14px;
-    }
     .finished-image {
       width: 100%;
       height: auto;
@@ -383,9 +410,12 @@
       gap: 12px;
     }
 
+    /* ▼ サイズ欄用 */
     .size-card {
       position: relative;
       overflow: hidden;
+      display: grid;
+      gap: 16px;
     }
     .size-card::after {
       content: "";
@@ -407,7 +437,21 @@
       border: 1px solid rgba(229,166,177,.28);
       padding: 6px 10px;
       border-radius: 999px;
-      margin-bottom: 14px;
+      margin-bottom: 4px;
+    }
+    .size-card-image {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(250,248,245,.1);
+      background: rgba(255,255,255,.03);
+    }
+    .size-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
     }
     .size-spec {
       margin-top: 10px;
@@ -422,27 +466,51 @@
       line-height: 1.8;
     }
 
-    .material-group {
+    /* ▼ 材料欄用 */
+    .materials-main-grid {
       display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 14px;
+    }
+    @media (max-width: 780px) {
+      .materials-main-grid {
+        grid-template-columns: 1fr;
+      }
     }
     .material-box {
       border: 1px solid rgba(250,248,245,.09);
       background: rgba(250,248,245,.02);
-      padding: 16px 16px 14px;
+      padding: 14px;
+      display: grid;
+      gap: 12px;
+      align-content: start;
+    }
+    .material-image {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(250,248,245,.1);
+      background: rgba(255,255,255,.03);
+    }
+    .material-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
     }
     .material-box h4 {
       font-size: .86rem;
       letter-spacing: .12em;
       text-transform: uppercase;
       color: var(--c-sakura-2);
-      margin-bottom: 8px;
+      margin-bottom: 4px;
       font-weight: 700;
     }
     .material-box p {
-      font-size: .95rem;
+      font-size: .93rem;
       color: rgba(250,248,245,.9);
-      line-height: 1.9;
+      line-height: 1.8;
     }
 
     .steps-wrap {
@@ -709,6 +777,13 @@
   </header>
 
   <section class="hero">
+    <!-- ▼ ヘッダー背景に使う横長画像。ここだけ差し替えればOK -->
+    <div class="hero-bg-image" aria-hidden="true">
+      <img src="images/IMG_7831.png" alt="">
+    </div>
+
+    <div class="hero-overlay" aria-hidden="true"></div>
+
     <div class="container hero-inner">
       <div class="hero-copy">
         <p class="eyebrow">Sashikodori Mesh Pouch Guide</p>
@@ -818,20 +893,40 @@
 
       <div class="grid-2">
         <article class="card size-card reveal">
-          <span class="size-badge">Rectangular Type</span>
-          <h3>長方形タイプ（今回制作）</h3>
-          <p>Seria / #4571196333457</p>
-          <p style="margin-top: 6px;">色：カーキ、ライトグレーの2色</p>
-          <p class="size-spec">約 縦14cm × 横8cm</p>
+          <div>
+            <span class="size-badge">Rectangular Type</span>
+            <h3>長方形タイプ（今回制作）</h3>
+          </div>
+
+          <!-- ▼ 長方形タイプ画像。ここだけ差し替えればOK -->
+          <div class="size-card-image">
+            <img src="images/IMG_7634.png" alt="長方形タイプのメッシュポーチ">
+          </div>
+
+          <div>
+            <p>Seria / #4571196333457</p>
+            <p style="margin-top: 6px;">色：カーキ、ライトグレーの2色</p>
+            <p class="size-spec">約 縦14cm × 横8cm</p>
+          </div>
         </article>
 
         <article class="card size-card reveal">
-          <span class="size-badge">Square Type</span>
-          <h3>正方形タイプ（今回は制作していません）</h3>
-          <p>Seria / #4571196333440</p>
-          <p style="margin-top: 6px;">色：カーキ、ライトグレーの2色</p>
-          <p class="size-spec">約 縦10cm × 横10cm</p>
-          <p class="small-note">※ 今回のページでは長方形タイプを中心にご紹介しています。</p>
+          <div>
+            <span class="size-badge">Square Type</span>
+            <h3>正方形タイプ（今回は制作していません）</h3>
+          </div>
+
+          <!-- ▼ 正方形タイプ画像。ここだけ差し替えればOK -->
+          <div class="size-card-image">
+            <img src="images/size-square.jpg" alt="正方形タイプのメッシュポーチ">
+          </div>
+
+          <div>
+            <p>Seria / #4571196333440</p>
+            <p style="margin-top: 6px;">色：カーキ、ライトグレーの2色</p>
+            <p class="size-spec">約 縦10cm × 横10cm</p>
+            <p class="small-note">※ 今回のページでは長方形タイプを中心にご紹介しています。</p>
+          </div>
         </article>
       </div>
     </div>
@@ -850,18 +945,39 @@
       <div class="grid-2">
         <article class="card reveal">
           <h3>メイン材料</h3>
-          <div class="material-group">
+
+          <div class="materials-main-grid">
             <div class="material-box">
-              <h4>メッシュポーチ</h4>
-              <p>カラビナ付メッシュポーチ（Seria / #4571196333457 他）</p>
+              <!-- ▼ メッシュポーチ画像。ここだけ差し替えればOK -->
+              <div class="material-image">
+                <img src="images/IMG_7630.png" alt="メッシュポーチ">
+              </div>
+              <div>
+                <h4>メッシュポーチ</h4>
+                <p>カラビナ付メッシュポーチ（Seria / #4571196333457 他）</p>
+              </div>
             </div>
+
             <div class="material-box">
-              <h4>糸</h4>
-              <p>こぎん糸（Seria / #4582577942090）</p>
+              <!-- ▼ こぎん糸画像。ここだけ差し替えればOK -->
+              <div class="material-image">
+                <img src="images/IMG_7652.png" alt="こぎん糸">
+              </div>
+              <div>
+                <h4>糸</h4>
+                <p>こぎん糸（Seria / #4582577942090）</p>
+              </div>
             </div>
+
             <div class="material-box">
-              <h4>針</h4>
-              <p>こぎん針（Seria / #4582577942311）</p>
+              <!-- ▼ こぎん針画像。ここだけ差し替えればOK -->
+              <div class="material-image">
+                <img src="images/IMG_7655.png" alt="こぎん針">
+              </div>
+              <div>
+                <h4>針</h4>
+                <p>こぎん針（Seria / #4582577942311）</p>
+              </div>
             </div>
           </div>
         </article>
