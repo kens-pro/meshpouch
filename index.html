@@ -936,6 +936,95 @@
         width: 100%;
       }
     }
+    /* ▼ キット内容画像用 */
+.kit-card-media {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.kit-card-thumb {
+  width: 110px;
+  aspect-ratio: 1 / 1;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(250,248,245,.12);
+  background: rgba(255,255,255,.04);
+  box-shadow: 0 8px 18px rgba(0,0,0,.18);
+}
+
+.kit-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.kit-card-body {
+  min-width: 0;
+}
+
+/* ▼ クリエイター丸画像用 */
+.profile-head {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.profile-avatar {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(229,166,177,.38);
+  background: rgba(255,255,255,.04);
+  box-shadow: 0 8px 18px rgba(0,0,0,.18);
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.profile-name-wrap {
+  display: grid;
+  gap: 4px;
+}
+
+.profile-name-label {
+  font-size: .74rem;
+  color: var(--c-muted);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-family: var(--font-latin);
+}
+
+.profile-name-value {
+  font-size: 1.08rem;
+  color: rgba(250,248,245,.96);
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .kit-card-media {
+    grid-template-columns: 1fr;
+  }
+
+  .kit-card-thumb {
+    width: 100%;
+    max-width: 180px;
+  }
+
+  .profile-head {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+}
   </style>
 </head>
 <body>
@@ -1260,19 +1349,28 @@
       </div>
 
       <div class="creator-wrap">
-        <dl class="profile reveal">
-          <dt>名前</dt>
-          <dd>刺し子どり</dd>
+       <dl class="profile reveal">
+  <div class="profile-head">
+    <!-- ▼ 刺し子どり自画像。ここだけ差し替え -->
+    <div class="profile-avatar">
+      <img src="images/sashikodori-avatar.jpg" alt="刺し子どりの自画像">
+    </div>
 
-          <dt>Instagram</dt>
-          <dd><a href="https://www.instagram.com/sashikodori/" target="_blank" rel="noopener noreferrer">@sashikodori</a></dd>
+    <div class="profile-name-wrap">
+      <div class="profile-name-label">Creator</div>
+      <div class="profile-name-value">刺し子どり</div>
+    </div>
+  </div>
 
-          <dt>作品コメント</dt>
-          <dd>
-            100円ショップのメッシュポーチに、お気に入りの色糸で刺し子を施すだけで、
-            世界にひとつの高見えアイテムに。穴を利用するので図案写しの手間もありません。
-          </dd>
-        </dl>
+  <dt>Instagram</dt>
+  <dd><a href="https://www.instagram.com/sashikodori/" target="_blank" rel="noopener noreferrer">@sashikodori</a></dd>
+
+  <dt>作品コメント</dt>
+  <dd>
+    100円ショップのメッシュポーチに、お気に入りの色糸で刺し子を施すだけで、
+    世界にひとつの高見えアイテムに。穴を利用するので図案写しの手間もありません。
+  </dd>
+</dl>
 
         <div class="creator-message reveal">
           <h3>刺し子をもっと気軽に、暮らしの中へ。</h3>
@@ -1290,7 +1388,7 @@
     <div class="container">
       <div class="sec-head reveal">
         <p class="sec-eyebrow">Kit Purchase</p>
-        <h2>すぐに始められるキットも用意しました</h2>
+        <h2>材料を探さなくても、届いたらすぐ始められます</h2>
         <p class="sec-desc">
           ページを見て「作ってみたい」と思った方へ。
           すぐに取りかかれるよう、必要なものをまとめたキットをご用意しました。
@@ -1312,20 +1410,33 @@
             <div class="kit-price-label">Price</div>
             <div class="kit-price">1,500<span>円</span></div>
             <p class="kit-tax">税込価格</p>
+            <p style="margin-top:10px; font-size:.92rem; color:rgba(250,248,245,.85);">
+専用動画つき／LINE・DMサポートあり
+</p>
           </div>
         </div>
 
         <div class="kit-grid">
-          <article class="kit-card">
-            <h4>キット内容</h4>
-            <ul>
-              <li>メッシュポーチ本体</li>
-              <li>こぎん糸</li>
-              <li>こぎん針</li>
-              <li>作り方がわかる専用動画</li>
-              <li>公式LINE、ＤＭの刺し子どりサポート</li>
-            </ul>
-          </article>
+         <article class="kit-card">
+  <h4>キット内容</h4>
+
+  <div class="kit-card-media">
+    <!-- ▼ キット内容の小画像。ここだけ差し替え -->
+    <div class="kit-card-thumb">
+      <img src="images/kit-image.jpg" alt="刺し子のメッシュポーチキット内容">
+    </div>
+
+    <div class="kit-card-body">
+      <ul>
+        <li>メッシュポーチ本体</li>
+        <li>こぎん糸</li>
+        <li>こぎん針</li>
+        <li>作り方がわかる専用動画</li>
+        <li>公式LINE、DMの刺し子どりサポート</li>
+      </ul>
+    </div>
+  </div>
+</article>
 
           <article class="kit-card">
             <h4>こんな方におすすめです</h4>
@@ -1343,12 +1454,39 @@
           ※ 内容の細かな仕様は、仕入れ状況に応じて一部変更となる場合があります。<br>
           ※ 不明点がある方は、先に公式LINEからご相談いただけます。
         </p>
+<p style="margin-top:20px; font-size:.95rem; color:rgba(250,248,245,.9);">
+まずは1つ、気軽に作ってみてください。<br>
+「できた」が、きっと次につながります。
+</p>
 
         <div class="kit-cta-wrap">
           <a class="btn-square" id="squareBtn" href="#" target="_blank" rel="noopener noreferrer">🛒 Squareで購入する</a>
           <a class="btn-line-cta" id="lineBtn" href="#" target="_blank" rel="noopener noreferrer">💬 公式LINEで相談する</a>
         </div>
+<div class="kit-faq" style="margin-top:28px; display:grid; gap:14px;">
+  
+  <div style="border:1px solid rgba(250,248,245,.1); padding:16px; background:rgba(250,248,245,.02);">
+    <strong>Q. 本当に初心者でもできますか？</strong>
+    <p style="margin-top:6px; font-size:.9rem; color:rgba(250,248,245,.85);">
+      はい。メッシュの穴を使うので図案なしでも進めやすく、専用動画で流れを確認しながら進められます。
+    </p>
+  </div>
 
+  <div style="border:1px solid rgba(250,248,245,.1); padding:16px; background:rgba(250,248,245,.02);">
+    <strong>Q. 動画だけで完成できますか？</strong>
+    <p style="margin-top:6px; font-size:.9rem; color:rgba(250,248,245,.85);">
+      はい。実際の手順を動画で確認しながら進められますので、迷いにくい構成になっています。
+    </p>
+  </div>
+
+  <div style="border:1px solid rgba(250,248,245,.1); padding:16px; background:rgba(250,248,245,.02);">
+    <strong>Q. わからない時はどうしたらいいですか？</strong>
+    <p style="margin-top:6px; font-size:.9rem; color:rgba(250,248,245,.85);">
+      公式LINEやInstagramのDMからご相談いただけます。刺し子どりが直接サポートします。
+    </p>
+  </div>
+
+</div>
         <p class="cta-subtext">
           「まず相談したい」という方は公式LINEへ。すぐ購入したい方はSquareからどうぞ。
         </p>
