@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>100均ポーチが大変身！刺し子のメッシュポーチ｜刺し子どり</title>
-  <meta name="description" content="100円ショップのメッシュポーチに刺し子を施して、世界にひとつの高見えアイテムに。材料・作り方・コツを1ページでわかりやすく紹介。" />
+  <meta name="description" content="100円ショップのメッシュポーチに刺し子を施して、世界にひとつの高見えアイテムに。材料・作り方・コツを1ページでわかりやすく紹介。さらに、すぐに始められるキットもご用意しています。" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Shippori+Mincho:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -22,6 +22,8 @@
       --c-moss: #6a7753;
       --c-gold: #c8a86f;
       --c-line: #06C755;
+      --c-square: #8b6b4a;
+      --c-square-2: #a6845d;
       --c-white: #faf8f5;
       --c-muted: #aa9f95;
       --c-border: rgba(250, 248, 245, 0.12);
@@ -33,7 +35,7 @@
       --ease: cubic-bezier(0.16, 1, 0.3, 1);
 
       /* ▼ ヘッダー背景画像の透明度はここで調整 */
-      --hero-image-opacity: 0.34;
+      --hero-image-opacity: 0.26;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -141,7 +143,6 @@
       overflow: hidden;
     }
 
-    /* ▼ 横広の背景画像を入れる場所 */
     .hero-bg-image {
       position: absolute;
       inset: 0;
@@ -149,24 +150,24 @@
       pointer-events: none;
       overflow: hidden;
     }
-   .hero-bg-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 60% center;
-  opacity: 0.26;
-  transform: scale(1.06);
-  filter: saturate(0.92) contrast(0.95);
-}
+    .hero-bg-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 60% center;
+      opacity: var(--hero-image-opacity);
+      transform: scale(1.06);
+      filter: saturate(0.92) contrast(0.95);
+    }
 
-   .hero-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  background:
-    linear-gradient(180deg, rgba(10,9,8,.34) 0%, rgba(15,13,12,.60) 42%, rgba(15,13,12,.90) 100%);
-  pointer-events: none;
-}
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background:
+        linear-gradient(180deg, rgba(10,9,8,.34) 0%, rgba(15,13,12,.60) 42%, rgba(15,13,12,.90) 100%);
+      pointer-events: none;
+    }
 
     .hero::after {
       content: "";
@@ -177,18 +178,18 @@
       pointer-events: none;
       z-index: 2;
     }
-   .hero-inner {
-  position: relative;
-  z-index: 3;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 28px;
-  align-items: end;
-}
-.hero-copy {
-  max-width: 760px;
-  margin-left: 36px;
-}
+    .hero-inner {
+      position: relative;
+      z-index: 3;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      align-items: end;
+    }
+    .hero-copy {
+      max-width: 760px;
+      margin-left: 36px;
+    }
     @media (max-width: 900px) {
       .hero-inner { grid-template-columns: 1fr; }
     }
@@ -237,39 +238,6 @@
       font-size: .8rem;
       color: rgba(250,248,245,.92);
       border-radius: 999px;
-    }
-
-    .hero-summary {
-      border: 1px solid rgba(250,248,245,.12);
-      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-      padding: 22px;
-      box-shadow: var(--shadow-soft);
-      backdrop-filter: blur(6px);
-    }
-    .hero-summary h2 {
-      font-size: 1.12rem;
-      margin-bottom: 12px;
-      color: var(--c-gold);
-      font-family: var(--font-serif);
-    }
-    .hero-summary ul {
-      list-style: none;
-      display: grid;
-      gap: 10px;
-    }
-    .hero-summary li {
-      font-size: .92rem;
-      color: rgba(250,248,245,.88);
-      padding-left: 1.2em;
-      position: relative;
-    }
-    .hero-summary li::before {
-      content: "✦";
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: var(--c-sakura-2);
-      font-size: .9em;
     }
 
     section {
@@ -349,38 +317,6 @@
       margin: 0 auto !important;
     }
 
-    .info-band {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 16px;
-      margin-top: 34px;
-    }
-    @media (max-width: 920px) {
-      .info-band { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-    @media (max-width: 560px) {
-      .info-band { grid-template-columns: 1fr; }
-    }
-    .info-item {
-      border: 1px solid var(--c-border);
-      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
-      padding: 18px 18px 16px;
-      min-height: 118px;
-    }
-    .info-item .label {
-      font-size: .73rem;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      color: var(--c-muted);
-      margin-bottom: 10px;
-      font-family: var(--font-latin);
-    }
-    .info-item .value {
-      font-size: .96rem;
-      color: rgba(250,248,245,.92);
-      line-height: 1.8;
-    }
-
     .grid-2 {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -414,7 +350,6 @@
       gap: 12px;
     }
 
-    /* ▼ サイズ欄用 */
     .size-card {
       position: relative;
       overflow: hidden;
@@ -470,7 +405,6 @@
       line-height: 1.8;
     }
 
-    /* ▼ 材料欄用 */
     .materials-main-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -527,99 +461,99 @@
       .steps-wrap { grid-template-columns: 1fr; }
     }
 
- .steps {
-  list-style: none;
-  display: grid;
-  gap: 16px;
-}
+    .steps {
+      list-style: none;
+      display: grid;
+      gap: 16px;
+    }
 
-.steps li {
-  border: 1px solid var(--c-border);
-  background: rgba(250,248,245,.02);
-  padding: 20px;
-  font-size: .95rem;
-}
+    .steps li {
+      border: 1px solid var(--c-border);
+      background: rgba(250,248,245,.02);
+      padding: 20px;
+      font-size: .95rem;
+    }
 
-.steps li::before {
-  display: none;
-}
+    .steps li::before {
+      display: none;
+    }
 
-.step-card {
-  display: grid;
-  grid-template-columns: 56px minmax(0, 1fr);
-  gap: 18px;
-  align-items: start;
-}
+    .step-card {
+      display: grid;
+      grid-template-columns: 56px minmax(0, 1fr);
+      gap: 18px;
+      align-items: start;
+    }
 
-.step-num {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background: var(--c-sakura);
-  color: #fff;
-  font-size: 1.05rem;
-  font-weight: 700;
-  line-height: 1;
-  flex-shrink: 0;
-}
+    .step-num {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--c-sakura);
+      color: #fff;
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1;
+      flex-shrink: 0;
+    }
 
-.step-body {
-  min-width: 0;
-  display: grid;
-  gap: 12px;
-}
+    .step-body {
+      min-width: 0;
+      display: grid;
+      gap: 12px;
+    }
 
-.step-text {
-  color: rgba(250,248,245,.92);
-  font-size: 1rem;
-  line-height: 1.9;
-}
+    .step-text {
+      color: rgba(250,248,245,.92);
+      font-size: 1rem;
+      line-height: 1.9;
+    }
 
-.step-image {
-  width: 100%;
-  max-width: 560px;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid rgba(250,248,245,.10);
-  background: rgba(255,255,255,.03);
-}
+    .step-image {
+      width: 100%;
+      max-width: 560px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(250,248,245,.10);
+      background: rgba(255,255,255,.03);
+    }
 
-.step-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
+    .step-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
-.step-caption {
-  color: var(--c-muted);
-  font-size: .82rem;
-  line-height: 1.7;
-}
+    .step-caption {
+      color: var(--c-muted);
+      font-size: .82rem;
+      line-height: 1.7;
+    }
 
-.step-note {
-  color: rgba(250,248,245,.66);
-  font-size: .82rem;
-  line-height: 1.7;
-}
+    .step-note {
+      color: rgba(250,248,245,.66);
+      font-size: .82rem;
+      line-height: 1.7;
+    }
 
-@media (max-width: 640px) {
-  .steps li {
-    padding: 16px;
-  }
+    @media (max-width: 640px) {
+      .steps li {
+        padding: 16px;
+      }
 
-  .step-card {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
+      .step-card {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
 
-  .step-num {
-    width: 48px;
-    height: 48px;
-    font-size: .95rem;
-  }
-}
+      .step-num {
+        width: 48px;
+        height: 48px;
+        font-size: .95rem;
+      }
+    }
 
     .side-note {
       border: 1px solid var(--c-border);
@@ -736,6 +670,174 @@
       font-size: .94rem;
     }
 
+    /* ▼ 追加：購入セクション */
+    .kit-section {
+      background:
+        radial-gradient(circle at 10% 20%, rgba(212,129,140,.10), transparent 28%),
+        radial-gradient(circle at 90% 80%, rgba(200,168,111,.10), transparent 24%),
+        linear-gradient(180deg, #15110f 0%, #0f0d0c 100%);
+      border-top: 1px solid rgba(250,248,245,.08);
+      border-bottom: 1px solid rgba(250,248,245,.08);
+    }
+
+    .kit-box {
+      border: 1px solid rgba(200,168,111,.24);
+      background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.015));
+      box-shadow: 0 24px 50px rgba(0,0,0,.28);
+      padding: clamp(22px, 4vw, 38px);
+    }
+
+    .kit-top {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(280px, .95fr);
+      gap: 24px;
+      align-items: start;
+    }
+    @media (max-width: 920px) {
+      .kit-top {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .kit-copy h3 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.35rem, 3vw, 2rem);
+      line-height: 1.5;
+      color: var(--c-gold);
+      margin-bottom: 14px;
+    }
+    .kit-copy p {
+      color: rgba(250,248,245,.86);
+      font-size: .98rem;
+    }
+
+    .kit-price-card {
+      border: 1px solid rgba(250,248,245,.12);
+      background: rgba(250,248,245,.03);
+      padding: 22px;
+    }
+    .kit-price-label {
+      font-size: .76rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--c-muted);
+      font-family: var(--font-latin);
+      margin-bottom: 10px;
+    }
+    .kit-price {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.1;
+      color: var(--c-white);
+      margin-bottom: 10px;
+    }
+    .kit-price span {
+      font-size: .48em;
+      color: var(--c-gold);
+      margin-left: .15em;
+    }
+    .kit-tax {
+      color: rgba(250,248,245,.72);
+      font-size: .92rem;
+    }
+
+    .kit-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+    @media (max-width: 860px) {
+      .kit-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .kit-card {
+      border: 1px solid rgba(250,248,245,.10);
+      background: rgba(250,248,245,.02);
+      padding: 22px;
+    }
+    .kit-card h4 {
+      font-family: var(--font-serif);
+      font-size: 1.12rem;
+      color: var(--c-gold);
+      margin-bottom: 12px;
+    }
+    .kit-card ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+    .kit-card li {
+      color: rgba(250,248,245,.9);
+      font-size: .95rem;
+      padding-left: 1.2em;
+      position: relative;
+    }
+    .kit-card li::before {
+      content: "✦";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--c-sakura-2);
+      font-size: .9em;
+    }
+
+    .kit-note {
+      margin-top: 18px;
+      color: var(--c-muted);
+      font-size: .85rem;
+      line-height: 1.8;
+    }
+
+    .kit-cta-wrap {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn-square,
+    .btn-line-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-decoration: none;
+      padding: 15px 28px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: transform .25s var(--ease), box-shadow .25s var(--ease), opacity .25s var(--ease);
+      min-width: 220px;
+    }
+
+    .btn-square {
+      color: #fff;
+      background: linear-gradient(180deg, var(--c-square-2), var(--c-square));
+      box-shadow: 0 14px 28px rgba(139,107,74,.32);
+    }
+    .btn-square:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 36px rgba(139,107,74,.4);
+    }
+
+    .btn-line-cta {
+      color: #fff;
+      background: var(--c-line);
+      box-shadow: 0 14px 28px rgba(6,199,85,.35);
+    }
+    .btn-line-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 36px rgba(6,199,85,.43);
+    }
+
+    .cta-subtext {
+      margin-top: 14px;
+      color: rgba(250,248,245,.68);
+      font-size: .88rem;
+    }
+
     .cta {
       text-align: center;
       background: linear-gradient(180deg, var(--c-bg-2), var(--c-bg));
@@ -795,12 +897,12 @@
       align-items: center;
       color: #fff;
       text-decoration: none;
-      background: var(--c-line);
+      background: linear-gradient(180deg, var(--c-square-2), var(--c-square));
       padding: 11px 18px;
       border-radius: 999px;
       font-size: .85rem;
       font-weight: 700;
-      box-shadow: 0 10px 24px rgba(6,199,85,.28);
+      box-shadow: 0 10px 24px rgba(139,107,74,.32);
     }
 
     .reveal {
@@ -820,18 +922,32 @@
       .ig-link { font-size: .76rem; padding: 7px 11px; }
       .hero { padding: 108px 0 56px; }
       .hero-copy { margin-left: 0; }
-      .hero-summary,
       .media-card,
       .card,
       .tip,
       .profile,
       .creator-message,
-      .side-note { padding: 18px; }
-      .steps li { padding: 16px 16px 16px 56px; }
+      .side-note,
+      .kit-box,
+      .kit-card,
+      .kit-price-card { padding: 18px; }
+      .btn-square,
+      .btn-line-cta {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
+  <!--
+    ▼▼▼ 必ずここだけ差し替えてください ▼▼▼
+    Square購入URL
+  -->
+  <script>
+    const SQUARE_URL = "https://example.square.site/";
+    const LINE_URL = "https://line.me/R/ti/p/@example";
+  </script>
+
   <div class="petals" aria-hidden="true">
     <span class="petal"></span><span class="petal"></span><span class="petal"></span>
     <span class="petal"></span><span class="petal"></span><span class="petal"></span>
@@ -846,7 +962,6 @@
   </header>
 
   <section class="hero">
-    <!-- ▼ ヘッダー背景に使う横長画像。ここだけ差し替えればOK -->
     <div class="hero-bg-image" aria-hidden="true">
       <img src="images/IMG_7831.jpg" alt="">
     </div>
@@ -872,8 +987,6 @@
           <span class="hero-pill">図案写し不要</span>
         </div>
       </div>
-
-      
     </div>
   </section>
 
@@ -882,7 +995,6 @@
       <div class="sec-head reveal">
         <p class="sec-eyebrow">Visual & Reel</p>
         <h2>完成イメージとリール動画</h2>
-       
       </div>
 
       <div class="media-grid">
@@ -906,7 +1018,6 @@
     </div>
   </section>
 
- 
   <section>
     <div class="container">
       <div class="sec-head reveal">
@@ -924,7 +1035,6 @@
             <h3>長方形タイプ（今回制作）</h3>
           </div>
 
-          <!-- ▼ 長方形タイプ画像。ここだけ差し替えればOK -->
           <div class="size-card-image">
             <img src="images/IMG_7634.jpg" alt="長方形タイプのメッシュポーチ">
           </div>
@@ -942,7 +1052,6 @@
             <h3>正方形タイプ（今回は制作していません）</h3>
           </div>
 
-          <!-- ▼ 正方形タイプ画像。ここだけ差し替えればOK -->
           <div class="size-card-image">
             <img src="images/size-square.jpg" alt="正方形タイプのメッシュポーチ">
           </div>
@@ -974,7 +1083,6 @@
 
           <div class="materials-main-grid">
             <div class="material-box">
-              <!-- ▼ メッシュポーチ画像。ここだけ差し替えればOK -->
               <div class="material-image">
                 <img src="images/IMG_7630.jpg" alt="メッシュポーチ">
               </div>
@@ -985,7 +1093,6 @@
             </div>
 
             <div class="material-box">
-              <!-- ▼ こぎん糸画像。ここだけ差し替えればOK -->
               <div class="material-image">
                 <img src="images/IMG_7652.jpg" alt="こぎん糸">
               </div>
@@ -996,7 +1103,6 @@
             </div>
 
             <div class="material-box">
-              <!-- ▼ こぎん針画像。ここだけ差し替えればOK -->
               <div class="material-image">
                 <img src="images/IMG_7655.jpg" alt="こぎん針">
               </div>
@@ -1018,7 +1124,6 @@
             <li>・糸切はさみ</li>
             <li>・その他必要に応じて</li>
           </ul>
-         
         </article>
       </div>
     </div>
@@ -1029,80 +1134,77 @@
       <div class="sec-head reveal">
         <p class="sec-eyebrow">How To</p>
         <h2>作り方ステップ</h2>
-       
       </div>
 
       <div class="steps-wrap">
-     <ol class="steps reveal">
-  <li>
-    <div class="step-card">
-      <div class="step-num">1</div>
-      <div class="step-body">
-        <div class="step-text">
-          ファスナー下、右内側をスタートラインとします。糸を50cm程度にカットし、
-          糸端を玉留め処理して、一目ずつなみ縫いの要領で進みます。
-        </div>
-      </div>
-    </div>
-  </li>
+        <ol class="steps reveal">
+          <li>
+            <div class="step-card">
+              <div class="step-num">1</div>
+              <div class="step-body">
+                <div class="step-text">
+                  ファスナー下、右内側をスタートラインとします。糸を50cm程度にカットし、
+                  糸端を玉留め処理して、一目ずつなみ縫いの要領で進みます。
+                </div>
+              </div>
+            </div>
+          </li>
 
-  <li>
-    <div class="step-card">
-      <div class="step-num">2</div>
-      <div class="step-body">
-        <div class="step-text">
-          2色使うので、一段置きにポーチを一周するように進みます。
-        </div>
-      </div>
-    </div>
-  </li>
+          <li>
+            <div class="step-card">
+              <div class="step-num">2</div>
+              <div class="step-body">
+                <div class="step-text">
+                  2色使うので、一段置きにポーチを一周するように進みます。
+                </div>
+              </div>
+            </div>
+          </li>
 
-  <li>
-    <div class="step-card">
-      <div class="step-num">3</div>
-      <div class="step-body">
-        <div class="step-text">
-          糸のつなぎは「はた結び」をします。結び目はメッシュの下に隠れるように、
-          糸の引き加減で調節します。
-        </div>
+          <li>
+            <div class="step-card">
+              <div class="step-num">3</div>
+              <div class="step-body">
+                <div class="step-text">
+                  糸のつなぎは「はた結び」をします。結び目はメッシュの下に隠れるように、
+                  糸の引き加減で調節します。
+                </div>
 
-        <!-- ▼ ステップ3の説明画像はここに入れます -->
-        <div class="step-image">
-          <img src="images/sasikodori_2.jpg" alt="はた結びの説明画像">
-        </div>
+                <div class="step-image">
+                  <img src="images/sasikodori_2.jpg" alt="はた結びの説明画像">
+                </div>
 
-        <div class="step-caption">
-          ★ ここが一番のポイントです
-        </div>
+                <div class="step-caption">
+                  ★ ここが一番のポイントです
+                </div>
 
-        <div class="step-note">
-                  </div>
-      </div>
-    </div>
-  </li>
+                <div class="step-note"></div>
+              </div>
+            </div>
+          </li>
 
-  <li>
-    <div class="step-card">
-      <div class="step-num">4</div>
-      <div class="step-body">
-        <div class="step-text">
-          2色めは、一目ズレるようにスタートして、ポーチを一周回ります。
-        </div>
-      </div>
-    </div>
-  </li>
+          <li>
+            <div class="step-card">
+              <div class="step-num">4</div>
+              <div class="step-body">
+                <div class="step-text">
+                  2色めは、一目ズレるようにスタートして、ポーチを一周回ります。
+                </div>
+              </div>
+            </div>
+          </li>
 
-  <li>
-    <div class="step-card">
-      <div class="step-num">5</div>
-      <div class="step-body">
-        <div class="step-text">
-          刺し終わりはポーチの端の部分に玉留めして、糸を切ります。
-        </div>
-      </div>
-    </div>
-  </li>
-</ol>
+          <li>
+            <div class="step-card">
+              <div class="step-num">5</div>
+              <div class="step-body">
+                <div class="step-text">
+                  刺し終わりはポーチの端の部分に玉留めして、糸を切ります。
+                </div>
+              </div>
+            </div>
+          </li>
+        </ol>
 
         <aside class="side-note reveal">
           <h3>進めるときのポイント</h3>
@@ -1183,14 +1285,86 @@
     </div>
   </section>
 
+  <!-- ▼▼▼ ここから購入セクションを追加 ▼▼▼ -->
+  <section class="kit-section">
+    <div class="container">
+      <div class="sec-head reveal">
+        <p class="sec-eyebrow">Kit Purchase</p>
+        <h2>すぐに始められるキットも用意しました</h2>
+        <p class="sec-desc">
+          ページを見て「作ってみたい」と思った方へ。
+          すぐに取りかかれるよう、必要なものをまとめたキットをご用意しました。
+        </p>
+      </div>
+
+      <div class="kit-box reveal">
+        <div class="kit-top">
+          <div class="kit-copy">
+            <h3>刺し子のメッシュポーチキット</h3>
+            <p>
+              材料をあれこれ探さなくても、届いたらそのまま始めやすい内容にしました。
+              「メッシュポーチに刺し子って難しそう…」という方にも、
+              最初の一歩がやさしくなるキットです。
+            </p>
+          </div>
+
+          <div class="kit-price-card">
+            <div class="kit-price-label">Price</div>
+            <div class="kit-price">1,500<span>円</span></div>
+            <p class="kit-tax">税込価格</p>
+          </div>
+        </div>
+
+        <div class="kit-grid">
+          <article class="kit-card">
+            <h4>キット内容</h4>
+            <ul>
+              <li>メッシュポーチ本体</li>
+              <li>こぎん糸</li>
+              <li>こぎん針</li>
+              <li>作り方がわかる専用動画</li>
+              <li>公式LINE、ＤＭの刺し子どりサポート</li>
+            </ul>
+          </article>
+
+          <article class="kit-card">
+            <h4>こんな方におすすめです</h4>
+            <ul>
+              <li>刺し子を気軽に始めてみたい方</li>
+              <li>下図なしで楽しめる小物を作りたい方</li>
+              <li>短時間で完成する達成感を味わいたい方</li>
+              <li>材料をまとめて揃えたい方</li>
+              <li>プレゼント用に作ってみたい方</li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="kit-note">
+          ※ 内容の細かな仕様は、仕入れ状況に応じて一部変更となる場合があります。<br>
+          ※ 不明点がある方は、先に公式LINEからご相談いただけます。
+        </p>
+
+        <div class="kit-cta-wrap">
+          <a class="btn-square" id="squareBtn" href="#" target="_blank" rel="noopener noreferrer">🛒 Squareで購入する</a>
+          <a class="btn-line-cta" id="lineBtn" href="#" target="_blank" rel="noopener noreferrer">💬 公式LINEで相談する</a>
+        </div>
+
+        <p class="cta-subtext">
+          「まず相談したい」という方は公式LINEへ。すぐ購入したい方はSquareからどうぞ。
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- ▲▲▲ ここまで購入セクション ▲▲▲ -->
+
   <section class="cta">
     <div class="container reveal">
-      <h2>まずは1時間、針を持ってみませんか。</h2>
+      <h2>まずは気軽に、ひとつ作ってみませんか。</h2>
       <p>
-        100均素材からはじめる刺し子のメッシュポーチ。
-        わからない点はInstagramの投稿やDMからお気軽にご確認ください。
+        見て終わりではなく、実際に手を動かすと刺し子の楽しさはぐっと広がります。
+        購入前のご質問は、公式LINEからお気軽にどうぞ。
       </p>
-      <a class="btn-line" href="https://www.instagram.com/sashikodori/" target="_blank" rel="noopener noreferrer">💬 Instagramで見る</a>
+      <a class="btn-line" id="lineBtnBottom" href="#" target="_blank" rel="noopener noreferrer">💬 公式LINEで問い合わせる</a>
     </div>
   </section>
 
@@ -1199,7 +1373,7 @@
   </footer>
 
   <div class="sticky" id="sticky">
-    <a href="https://www.instagram.com/sashikodori/" target="_blank" rel="noopener noreferrer">💬 相談する</a>
+    <a id="stickyBtn" href="#" target="_blank" rel="noopener noreferrer">🛒 キットを購入する</a>
   </div>
 
   <script>
@@ -1219,6 +1393,11 @@
     window.addEventListener('scroll', () => {
       sticky.classList.toggle('show', window.scrollY > 450);
     }, { passive: true });
+
+    document.getElementById('squareBtn').href = SQUARE_URL;
+    document.getElementById('lineBtn').href = LINE_URL;
+    document.getElementById('lineBtnBottom').href = LINE_URL;
+    document.getElementById('stickyBtn').href = SQUARE_URL;
   </script>
   <script async src="https://www.instagram.com/embed.js"></script>
 </body>
