@@ -149,24 +149,24 @@
       pointer-events: none;
       overflow: hidden;
     }
-    .hero-bg-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center center;
-      opacity: var(--hero-image-opacity);
-      transform: scale(1.06);
-      filter: saturate(0.92) contrast(0.95);
-    }
+   .hero-bg-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 60% center;
+  opacity: 0.26;
+  transform: scale(1.06);
+  filter: saturate(0.92) contrast(0.95);
+}
 
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      z-index: 2;
-      background:
-        linear-gradient(180deg, rgba(10,9,8,.28) 0%, rgba(15,13,12,.52) 42%, rgba(15,13,12,.88) 100%);
-      pointer-events: none;
-    }
+   .hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(180deg, rgba(10,9,8,.34) 0%, rgba(15,13,12,.60) 42%, rgba(15,13,12,.90) 100%);
+  pointer-events: none;
+}
 
     .hero::after {
       content: "";
@@ -177,14 +177,18 @@
       pointer-events: none;
       z-index: 2;
     }
-    .hero-inner {
-      position: relative;
-      z-index: 3;
-      display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr);
-      gap: 28px;
-      align-items: end;
-    }
+   .hero-inner {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  align-items: end;
+}
+.hero-copy {
+  max-width: 760px;
+  margin-left: 36px;
+}
     @media (max-width: 900px) {
       .hero-inner { grid-template-columns: 1fr; }
     }
@@ -751,6 +755,7 @@
       .logo { font-size: .92rem; letter-spacing: .18em; }
       .ig-link { font-size: .76rem; padding: 7px 11px; }
       .hero { padding: 108px 0 56px; }
+      .hero-copy { margin-left: 0; }
       .hero-summary,
       .media-card,
       .card,
@@ -804,15 +809,7 @@
         </div>
       </div>
 
-      <aside class="hero-summary reveal">
-        <h2>このページでわかること</h2>
-        <ul>
-          <li>でき上がりサイズの違い</li>
-          <li>使った材料と道具</li>
-          <li>動画内容をもとにした作り方</li>
-          <li>きれいに仕上げるためのコツ</li>
-        </ul>
-      </aside>
+      
     </div>
   </section>
 
