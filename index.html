@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>100均ポーチが大変身！刺し子のメッシュポーチ｜刺し子どり</title>
+  <meta name="description" content="100円ショップのメッシュポーチに刺し子を施して、世界にひとつの高見えアイテムに。材料・作り方・コツを1ページでわかりやすく紹介。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Shippori+Mincho:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --c-bg: #0f0d0c;
+      --c-bg-2: #1a1512;
+      --c-bg-3: #231b17;
+      --c-paper: #f6efe3;
+      --c-paper-2: #ede0ce;
+      --c-ink: #1f1916;
+      --c-sakura: #d4818c;
+      --c-sakura-2: #e5a6b1;
+      --c-moss: #6a7753;
+      --c-gold: #c8a86f;
+      --c-line: #06C755;
+      --c-white: #faf8f5;
+      --c-muted: #aa9f95;
+      --c-border: rgba(250, 248, 245, 0.12);
+      --c-border-strong: rgba(250, 248, 245, 0.2);
+      --shadow-soft: 0 18px 40px rgba(0,0,0,.22);
+      --font-serif: 'Shippori Mincho', serif;
+      --font-latin: 'Cormorant Garamond', serif;
+      --font-sans: 'Zen Kaku Gothic New', sans-serif;
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-sans);
+      color: var(--c-white);
+      background: var(--c-bg);
+      line-height: 1.9;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.9'/%3E%3C/svg%3E");
+      opacity: .018;
+      z-index: 999;
+    }
+
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(1140px, calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .petals { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+    .petal {
+      position: absolute;
+      top: -40px;
+      width: 10px;
+      height: 8px;
+      border-radius: 50% 0 50% 0;
+      background: var(--c-sakura);
+      opacity: 0;
+      animation: fall linear infinite;
+    }
+    @keyframes fall {
+      0%   { opacity: 0; transform: translateY(0) rotate(0deg) scale(1); }
+      10%  { opacity: .35; }
+      90%  { opacity: .18; }
+      100% { opacity: 0; transform: translateY(110vh) rotate(660deg) scale(.55); }
+    }
+    .petal:nth-child(1){left:4%;animation-duration:14s;animation-delay:0s}
+    .petal:nth-child(2){left:14%;animation-duration:16s;animation-delay:2s}
+    .petal:nth-child(3){left:23%;animation-duration:12s;animation-delay:4s}
+    .petal:nth-child(4){left:38%;animation-duration:15s;animation-delay:1s}
+    .petal:nth-child(5){left:52%;animation-duration:13s;animation-delay:6s}
+    .petal:nth-child(6){left:66%;animation-duration:17s;animation-delay:3s}
+    .petal:nth-child(7){left:77%;animation-duration:11s;animation-delay:8s}
+    .petal:nth-child(8){left:88%;animation-duration:16s;animation-delay:5s}
+    .petal:nth-child(9){left:95%;animation-duration:14s;animation-delay:7s}
+
+    .site-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 30;
+      padding: 18px 24px;
+      background: linear-gradient(to bottom, rgba(15,13,12,.88), rgba(15,13,12,0));
+      backdrop-filter: blur(3px);
+    }
+    .site-header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+    }
+    .logo {
+      font-family: var(--font-serif);
+      letter-spacing: .23em;
+      font-size: 1.02rem;
+      white-space: nowrap;
+    }
+    .ig-link {
+      color: var(--c-white);
+      text-decoration: none;
+      font-size: .84rem;
+      border: 1px solid rgba(250,248,245,.25);
+      padding: 8px 14px;
+      border-radius: 999px;
+      transition: .25s var(--ease);
+      white-space: nowrap;
+    }
+    .ig-link:hover {
+      border-color: var(--c-sakura-2);
+      color: var(--c-sakura-2);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: grid;
+      align-items: end;
+      padding: 120px 0 68px;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(212,129,140,.22), transparent 30%),
+        radial-gradient(circle at 95% 85%, rgba(106,119,83,.22), transparent 30%),
+        linear-gradient(180deg, #191310 0%, var(--c-bg) 78%);
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 160px;
+      background: linear-gradient(to top, rgba(15,13,12,1), rgba(15,13,12,0));
+      pointer-events: none;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 3;
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr);
+      gap: 28px;
+      align-items: end;
+    }
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+    }
+
+    .eyebrow {
+      color: var(--c-gold);
+      font-family: var(--font-latin);
+      font-size: .78rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-weight: 800;
+      font-size: clamp(2rem, 6vw, 4.8rem);
+      line-height: 1.22;
+      margin-bottom: 18px;
+    }
+    .hero h1 em {
+      display: block;
+      font-family: var(--font-latin);
+      color: var(--c-sakura-2);
+      font-size: .47em;
+      font-style: italic;
+      font-weight: 400;
+      letter-spacing: .05em;
+      margin-bottom: 10px;
+    }
+    .lead {
+      max-width: 760px;
+      font-size: clamp(.95rem, 1.85vw, 1.06rem);
+      color: rgba(250,248,245,.84);
+      margin-bottom: 30px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .hero-pill {
+      border: 1px solid rgba(250,248,245,.2);
+      background: rgba(250,248,245,.045);
+      padding: 8px 13px;
+      font-size: .8rem;
+      color: rgba(250,248,245,.92);
+      border-radius: 999px;
+    }
+
+    .hero-summary {
+      border: 1px solid rgba(250,248,245,.12);
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      padding: 22px;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(6px);
+    }
+    .hero-summary h2 {
+      font-size: 1.12rem;
+      margin-bottom: 12px;
+      color: var(--c-gold);
+      font-family: var(--font-serif);
+    }
+    .hero-summary ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+    .hero-summary li {
+      font-size: .92rem;
+      color: rgba(250,248,245,.88);
+      padding-left: 1.2em;
+      position: relative;
+    }
+    .hero-summary li::before {
+      content: "✦";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--c-sakura-2);
+      font-size: .9em;
+    }
+
+    section {
+      position: relative;
+      z-index: 2;
+      padding: clamp(68px, 9vw, 110px) 0;
+    }
+
+    .section-soft {
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+    }
+
+    .sec-head {
+      margin-bottom: 28px;
+      max-width: 760px;
+    }
+    .sec-eyebrow {
+      color: var(--c-sakura-2);
+      text-transform: uppercase;
+      letter-spacing: .24em;
+      font-size: .74rem;
+      font-family: var(--font-latin);
+      margin-bottom: 12px;
+    }
+    h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.48rem, 4vw, 2.6rem);
+      line-height: 1.42;
+    }
+    .sec-desc {
+      color: rgba(250,248,245,.7);
+      font-size: .95rem;
+      margin-top: 12px;
+    }
+
+    .media-showcase {
+      padding-top: 30px;
+    }
+    .media-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(320px, .92fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+    @media (max-width: 920px) {
+      .media-grid { grid-template-columns: 1fr; }
+    }
+
+    .media-card {
+      border: 1px solid rgba(250,248,245,.12);
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+      padding: 18px;
+      box-shadow: 0 18px 40px rgba(0,0,0,.22);
+    }
+    .media-card h3 {
+      font-family: var(--font-serif);
+      color: var(--c-gold);
+      margin-bottom: 8px;
+      font-size: 1.12rem;
+    }
+    .media-card p {
+      color: rgba(250,248,245,.72);
+      font-size: .9rem;
+      margin-bottom: 14px;
+    }
+    .finished-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+    }
+
+    .reel-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .reel-wrapper .instagram-media {
+      width: 100% !important;
+      max-width: 420px !important;
+      min-width: unset !important;
+      margin: 0 auto !important;
+    }
+
+    .info-band {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 34px;
+    }
+    @media (max-width: 920px) {
+      .info-band { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 560px) {
+      .info-band { grid-template-columns: 1fr; }
+    }
+    .info-item {
+      border: 1px solid var(--c-border);
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+      padding: 18px 18px 16px;
+      min-height: 118px;
+    }
+    .info-item .label {
+      font-size: .73rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--c-muted);
+      margin-bottom: 10px;
+      font-family: var(--font-latin);
+    }
+    .info-item .value {
+      font-size: .96rem;
+      color: rgba(250,248,245,.92);
+      line-height: 1.8;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+    @media (max-width: 860px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+
+    .card {
+      border: 1px solid var(--c-border);
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+      padding: clamp(20px, 3vw, 28px);
+      box-shadow: 0 8px 20px rgba(0,0,0,.08);
+    }
+    .card h3 {
+      font-family: var(--font-serif);
+      color: var(--c-gold);
+      margin-bottom: 12px;
+      font-size: 1.16rem;
+      line-height: 1.5;
+    }
+    .card p,
+    .card li {
+      color: rgba(250,248,245,.88);
+      font-size: .95rem;
+    }
+    .card ul {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .size-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .size-card::after {
+      content: "";
+      position: absolute;
+      right: -24px;
+      bottom: -24px;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212,129,140,.18), rgba(212,129,140,0));
+      pointer-events: none;
+    }
+    .size-badge {
+      display: inline-block;
+      font-size: .72rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--c-sakura-2);
+      border: 1px solid rgba(229,166,177,.28);
+      padding: 6px 10px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+    .size-spec {
+      margin-top: 10px;
+      color: var(--c-white);
+      font-weight: 700;
+      font-size: 1.02rem;
+    }
+    .small-note {
+      margin-top: 10px;
+      color: var(--c-muted) !important;
+      font-size: .84rem !important;
+      line-height: 1.8;
+    }
+
+    .material-group {
+      display: grid;
+      gap: 14px;
+    }
+    .material-box {
+      border: 1px solid rgba(250,248,245,.09);
+      background: rgba(250,248,245,.02);
+      padding: 16px 16px 14px;
+    }
+    .material-box h4 {
+      font-size: .86rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--c-sakura-2);
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .material-box p {
+      font-size: .95rem;
+      color: rgba(250,248,245,.9);
+      line-height: 1.9;
+    }
+
+    .steps-wrap {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(260px, .8fr);
+      gap: 24px;
+      align-items: start;
+    }
+    @media (max-width: 920px) {
+      .steps-wrap { grid-template-columns: 1fr; }
+    }
+
+    .steps {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+      counter-reset: step;
+    }
+    .steps li {
+      position: relative;
+      padding: 18px 18px 18px 60px;
+      border: 1px solid var(--c-border);
+      background: rgba(250,248,245,.02);
+      font-size: .95rem;
+    }
+    .steps li::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 18px;
+      top: 18px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--c-sakura);
+      color: #fff;
+      font-size: .78rem;
+      font-weight: 700;
+    }
+
+    .side-note {
+      border: 1px solid var(--c-border);
+      background: linear-gradient(180deg, rgba(106,119,83,.14), rgba(255,255,255,.02));
+      padding: 22px;
+      position: sticky;
+      top: 100px;
+    }
+    .side-note h3 {
+      font-family: var(--font-serif);
+      color: var(--c-gold);
+      font-size: 1.12rem;
+      margin-bottom: 10px;
+    }
+    .side-note p,
+    .side-note li {
+      color: rgba(250,248,245,.86);
+      font-size: .92rem;
+    }
+    .side-note ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .side-note li {
+      padding-left: 1.2em;
+      position: relative;
+    }
+    .side-note li::before {
+      content: "・";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--c-sakura-2);
+    }
+
+    .tips {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+    @media (max-width: 860px) {
+      .tips { grid-template-columns: 1fr; }
+    }
+    .tip {
+      background: linear-gradient(180deg, var(--c-paper), var(--c-paper-2));
+      color: var(--c-ink);
+      border: 1px solid rgba(0,0,0,.08);
+      padding: 24px;
+      min-height: 100%;
+    }
+    .tip h3 {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: #7d5b2f;
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+    .tip p {
+      font-size: .94rem;
+      color: rgba(31,25,22,.86);
+      line-height: 1.9;
+    }
+
+    .creator-wrap {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
+      gap: 18px;
+      align-items: stretch;
+    }
+    @media (max-width: 860px) {
+      .creator-wrap { grid-template-columns: 1fr; }
+    }
+
+    .profile {
+      border: 1px solid var(--c-border);
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+      padding: 24px;
+      display: grid;
+      gap: 12px;
+    }
+    .profile dt {
+      font-size: .78rem;
+      color: var(--c-muted);
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-family: var(--font-latin);
+    }
+    .profile dd {
+      font-size: .95rem;
+      color: rgba(250,248,245,.9);
+    }
+    .profile a {
+      color: var(--c-sakura-2);
+      text-decoration: none;
+    }
+
+    .creator-message {
+      border: 1px solid rgba(229,166,177,.24);
+      background: linear-gradient(180deg, rgba(212,129,140,.12), rgba(255,255,255,.02));
+      padding: 24px;
+      display: grid;
+      align-content: center;
+    }
+    .creator-message h3 {
+      font-family: var(--font-serif);
+      color: var(--c-gold);
+      margin-bottom: 12px;
+      font-size: 1.15rem;
+    }
+    .creator-message p {
+      color: rgba(250,248,245,.86);
+      font-size: .94rem;
+    }
+
+    .cta {
+      text-align: center;
+      background: linear-gradient(180deg, var(--c-bg-2), var(--c-bg));
+      border-top: 1px solid var(--c-border);
+      border-bottom: 1px solid var(--c-border);
+    }
+    .cta h2 {
+      margin-bottom: 16px;
+    }
+    .cta p {
+      max-width: 760px;
+      margin: 0 auto 24px;
+      color: rgba(250,248,245,.72);
+      font-size: .96rem;
+    }
+    .btn-line {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      background: var(--c-line);
+      text-decoration: none;
+      padding: 14px 30px;
+      border-radius: 999px;
+      font-weight: 700;
+      box-shadow: 0 14px 28px rgba(6,199,85,.35);
+      transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+    }
+    .btn-line:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 36px rgba(6,199,85,.43);
+    }
+
+    footer {
+      padding: 34px 0;
+      text-align: center;
+      color: rgba(250,248,245,.42);
+      font-size: .78rem;
+    }
+
+    .sticky {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 40;
+      opacity: 0;
+      transform: translateY(18px);
+      transition: .35s var(--ease);
+    }
+    .sticky.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .sticky a {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      color: #fff;
+      text-decoration: none;
+      background: var(--c-line);
+      padding: 11px 18px;
+      border-radius: 999px;
+      font-size: .85rem;
+      font-weight: 700;
+      box-shadow: 0 10px 24px rgba(6,199,85,.28);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: .8s var(--ease);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 640px) {
+      .container { width: min(1140px, calc(100% - 28px)); }
+      .site-header { padding: 14px 14px; }
+      .logo { font-size: .92rem; letter-spacing: .18em; }
+      .ig-link { font-size: .76rem; padding: 7px 11px; }
+      .hero { padding: 108px 0 56px; }
+      .hero-summary,
+      .media-card,
+      .card,
+      .tip,
+      .profile,
+      .creator-message,
+      .side-note { padding: 18px; }
+      .steps li { padding: 16px 16px 16px 56px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="petals" aria-hidden="true">
+    <span class="petal"></span><span class="petal"></span><span class="petal"></span>
+    <span class="petal"></span><span class="petal"></span><span class="petal"></span>
+    <span class="petal"></span><span class="petal"></span><span class="petal"></span>
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">刺し子どり</div>
+      <a class="ig-link" href="https://www.instagram.com/sashikodori/" target="_blank" rel="noopener noreferrer">@sashikodori</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Sashikodori Mesh Pouch Guide</p>
+        <h1>
+          <em>100均ポーチが大変身！</em>
+          刺し子のメッシュポーチ
+        </h1>
+        <p class="lead">
+          100円ショップのメッシュポーチに、お気に入りの色糸で刺し子を施すだけで、
+          世界にひとつの高見えアイテムに。穴を利用するので図案写しの手間もありません。
+        </p>
+
+        <div class="hero-meta">
+          <span class="hero-pill">制作時間：約1時間</span>
+          <span class="hero-pill">初心者にもおすすめ</span>
+          <span class="hero-pill">材料はほぼSeriaで揃う</span>
+          <span class="hero-pill">図案写し不要</span>
+        </div>
+      </div>
+
+      <aside class="hero-summary reveal">
+        <h2>このページでわかること</h2>
+        <ul>
+          <li>でき上がりサイズの違い</li>
+          <li>使った材料と道具</li>
+          <li>動画内容をもとにした作り方</li>
+          <li>きれいに仕上げるためのコツ</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="media-showcase">
+    <div class="container">
+      <div class="sec-head reveal">
+        <p class="sec-eyebrow">Visual & Reel</p>
+        <h2>完成イメージと制作動画</h2>
+        <p class="sec-desc">
+          まずは完成写真で仕上がりを見て、そのあと動画で流れを確認できます。
+        </p>
+      </div>
+
+      <div class="media-grid">
+        <article class="media-card reveal">
+          <h3>完成画像</h3>
+          <p>ここに完成したメッシュポーチの画像を入れます。</p>
+          <img src="images/mesh-pouch-finished.jpg" alt="完成した刺し子のメッシュポーチ" class="finished-image">
+        </article>
+
+        <article class="media-card reveal">
+          <h3>制作動画（Instagramリール）</h3>
+          <p>28秒の制作動画をそのままページ内で見られるようにしています。</p>
+          <div class="reel-wrapper">
+            <blockquote
+              class="instagram-media"
+              data-instgrm-permalink="https://www.instagram.com/reel/DW2LC8mPYad/"
+              data-instgrm-version="14"
+              style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); padding:0;">
+            </blockquote>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-soft">
+    <div class="container">
+      <div class="sec-head reveal">
+        <p class="sec-eyebrow">Basic Information</p>
+        <h2>まずは作品の概要を、ひと目で。</h2>
+        <p class="sec-desc">
+          作品名・制作時間・クリエイター情報を先に整理して、全体像がすぐつかめるようにしました。
+        </p>
+      </div>
+
+      <div class="info-band">
+        <article class="info-item reveal">
+          <div class="label">作品名</div>
+          <div class="value">100均ポーチが大変身！<br>刺し子のメッシュポーチ</div>
+        </article>
+
+        <article class="info-item reveal">
+          <div class="label">クリエイター</div>
+          <div class="value">刺し子どり（吉田みどり）</div>
+        </article>
+
+        <article class="info-item reveal">
+          <div class="label">Instagram</div>
+          <div class="value"><a href="https://www.instagram.com/sashikodori/" target="_blank" rel="noopener noreferrer">@sashikodori</a></div>
+        </article>
+
+        <article class="info-item reveal">
+          <div class="label">制作時間</div>
+          <div class="value">約1時間</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="sec-head reveal">
+        <p class="sec-eyebrow">Size</p>
+        <h2>でき上がりサイズ</h2>
+        <p class="sec-desc">
+          今回制作した長方形タイプと、参考掲載の正方形タイプを分けて見やすく整理しました。
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <article class="card size-card reveal">
+          <span class="size-badge">Rectangular Type</span>
+          <h3>長方形タイプ（今回制作）</h3>
+          <p>Seria / #4571196333457</p>
+          <p style="margin-top: 6px;">色：カーキ、ライトグレーの2色</p>
+          <p class="size-spec">約 縦14cm × 横8cm</p>
+        </article>
+
+        <article class="card size-card reveal">
+          <span class="size-badge">Square Type</span>
+          <h3>正方形タイプ（今回は制作していません）</h3>
+          <p>Seria / #4571196333440</p>
+          <p style="margin-top: 6px;">色：カーキ、ライトグレーの2色</p>
+          <p class="size-spec">約 縦10cm × 横10cm</p>
+          <p class="small-note">※ 今回のページでは長方形タイプを中心にご紹介しています。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-soft">
+    <div class="container">
+      <div class="sec-head reveal">
+        <p class="sec-eyebrow">Materials</p>
+        <h2>材料リスト</h2>
+        <p class="sec-desc">
+          使用した材料は、すべてSeriaで購入したものです。刺し子糸と針の選び方も補足しています。
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <article class="card reveal">
+          <h3>メイン材料</h3>
+          <div class="material-group">
+            <div class="material-box">
+              <h4>メッシュポーチ</h4>
+              <p>カラビナ付メッシュポーチ（Seria / #4571196333457 他）</p>
+            </div>
+            <div class="material-box">
+              <h4>糸</h4>
+              <p>こぎん糸（Seria / #4582577942090）</p>
+            </div>
+            <div class="material-box">
+              <h4>針</h4>
+              <p>こぎん針（Seria / #4582577942311）</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <h3>その他用意する道具</h3>
+          <ul>
+            <li>・糸切はさみ</li>
+          </ul>
+          <p class="small-note">
+            ※ 100均の刺し子糸は意外と細いため、今回は太めのこぎん糸と、
+            先のとがっていないこぎん針を使ってみました。
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="sec-head reveal">
+        <p class="sec-eyebrow">How To</p>
+        <h2>作り方ステップ</h2>
+        <p class="sec-desc">
+          動画の内容をテキスト化したものです。先にリールで流れを見ておくと、手順がより理解しやすくなります。
+        </p>
+      </div>
+
+      <div class="steps-wrap">
+        <ol class="steps reveal">
+          <li>
+            ファスナー下、右側をスタートラインとします。糸を50cm程度にカットし、
+            糸端を玉留め処理して、一目ずつなみ縫いの要領で進みます。
+          </li>
+          <li>
+            2色使うので、一段置きにポーチを一周するように進みます。
+          </li>
+          <li>
+            糸のつなぎは「はた結び」をします。結び目はメッシュの下に隠れるように、
+            糸の引き加減で調節します。
+          </li>
+          <li>
+            2色めは、一目ズレるようにスタートして、ポーチを一周回ります。
+          </li>
+          <li>
+            刺し終わりはポーチの端の部分に玉留めして、糸を切ります。
+          </li>
+        </ol>
+
+        <aside class="side-note reveal">
+          <h3>進めるときのポイント</h3>
+          <p>
+            いきなり細かく考えすぎず、まずは一色目を一周して流れをつかむと、
+            2色目がぐっとやりやすくなります。
+          </p>
+          <ul>
+            <li>糸は長すぎると絡みやすいので約50cmが目安です。</li>
+            <li>結び目は表から目立たない位置に隠す意識で進めます。</li>
+            <li>2色めは「一目ずらす」が見た目のポイントです。</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-soft">
+    <div class="container">
+      <div class="sec-head reveal">
+        <p class="sec-eyebrow">Tips</p>
+        <h2>制作のコツ・アドバイス</h2>
+        <p class="sec-desc">
+          シンプルな作品ほど、素材の特性と色選びで印象が大きく変わります。
+        </p>
+      </div>
+
+      <div class="tips">
+        <article class="tip reveal">
+          <h3>図案が歪まず、初心者でも刺しやすい</h3>
+          <p>
+            メッシュの穴が等間隔なので、初心者の方でも図案が歪まずに刺せます。
+            下書きをしなくても目を拾いやすく、整った見た目に仕上げやすいのが魅力です。
+          </p>
+        </article>
+
+        <article class="tip reveal">
+          <h3>糸の色で雰囲気が大きく変わる</h3>
+          <p>
+            糸の色を変えるだけで、グレーならシックに、濃緑ならモダンにと、
+            雰囲気がガラリと変わります。色違いで作って並べても楽しめます。
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="sec-head reveal">
+        <p class="sec-eyebrow">Creator</p>
+        <h2>クリエイター紹介</h2>
+      </div>
+
+      <div class="creator-wrap">
+        <dl class="profile reveal">
+          <dt>名前</dt>
+          <dd>刺し子どり（吉田みどり）</dd>
+
+          <dt>Instagram</dt>
+          <dd><a href="https://www.instagram.com/sashikodori/" target="_blank" rel="noopener noreferrer">@sashikodori</a></dd>
+
+          <dt>作品コメント</dt>
+          <dd>
+            100円ショップのメッシュポーチに、お気に入りの色糸で刺し子を施すだけで、
+            世界にひとつの高見えアイテムに。穴を利用するので図案写しの手間もありません。
+          </dd>
+        </dl>
+
+        <div class="creator-message reveal">
+          <h3>刺し子をもっと気軽に、暮らしの中へ。</h3>
+          <p>
+            身近な材料から始められて、短時間でも達成感がある。
+            そんな小さな手づくりの楽しさを、これからも刺し子どりらしく発信していきます。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container reveal">
+      <h2>まずは1時間、針を持ってみませんか。</h2>
+      <p>
+        100均素材からはじめる刺し子のメッシュポーチ。
+        わからない点はInstagramの投稿やDMからお気軽にご確認ください。
+      </p>
+      <a class="btn-line" href="https://www.instagram.com/sashikodori/" target="_blank" rel="noopener noreferrer">💬 Instagramで見る</a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2026 刺し子どり / Sashikodori. All rights reserved.
+  </footer>
+
+  <div class="sticky" id="sticky">
+    <a href="https://www.instagram.com/sashikodori/" target="_blank" rel="noopener noreferrer">💬 相談する</a>
+  </div>
+
+  <script>
+    const revealTargets = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+    revealTargets.forEach(el => io.observe(el));
+
+    const sticky = document.getElementById('sticky');
+    window.addEventListener('scroll', () => {
+      sticky.classList.toggle('show', window.scrollY > 450);
+    }, { passive: true });
+  </script>
+  <script async src="https://www.instagram.com/embed.js"></script>
+</body>
+</html>
