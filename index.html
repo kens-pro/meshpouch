@@ -527,35 +527,99 @@
       .steps-wrap { grid-template-columns: 1fr; }
     }
 
-    .steps {
-      list-style: none;
-      display: grid;
-      gap: 14px;
-      counter-reset: step;
-    }
-    .steps li {
-      position: relative;
-      padding: 18px 18px 18px 60px;
-      border: 1px solid var(--c-border);
-      background: rgba(250,248,245,.02);
-      font-size: .95rem;
-    }
-    .steps li::before {
-      counter-increment: step;
-      content: counter(step);
-      position: absolute;
-      left: 18px;
-      top: 18px;
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: var(--c-sakura);
-      color: #fff;
-      font-size: .78rem;
-      font-weight: 700;
-    }
+ .steps {
+  list-style: none;
+  display: grid;
+  gap: 16px;
+}
+
+.steps li {
+  border: 1px solid var(--c-border);
+  background: rgba(250,248,245,.02);
+  padding: 20px;
+  font-size: .95rem;
+}
+
+.steps li::before {
+  display: none;
+}
+
+.step-card {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.step-num {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--c-sakura);
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.step-body {
+  min-width: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.step-text {
+  color: rgba(250,248,245,.92);
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.step-image {
+  width: 100%;
+  max-width: 560px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(250,248,245,.10);
+  background: rgba(255,255,255,.03);
+}
+
+.step-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.step-caption {
+  color: var(--c-muted);
+  font-size: .82rem;
+  line-height: 1.7;
+}
+
+.step-note {
+  color: rgba(250,248,245,.66);
+  font-size: .82rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 640px) {
+  .steps li {
+    padding: 16px;
+  }
+
+  .step-card {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .step-num {
+    width: 48px;
+    height: 48px;
+    font-size: .95rem;
+  }
+}
 
     .side-note {
       border: 1px solid var(--c-border);
@@ -784,7 +848,7 @@
   <section class="hero">
     <!-- ▼ ヘッダー背景に使う横長画像。ここだけ差し替えればOK -->
     <div class="hero-bg-image" aria-hidden="true">
-      <img src="images/IMG_7831.png" alt="">
+      <img src="images/IMG_7831.jpg" alt="">
     </div>
 
     <div class="hero-overlay" aria-hidden="true"></div>
@@ -817,20 +881,18 @@
     <div class="container">
       <div class="sec-head reveal">
         <p class="sec-eyebrow">Visual & Reel</p>
-        <h2>完成イメージと制作動画</h2>
-        <p class="sec-desc">
-          まずは完成写真で仕上がりを見て、そのあと動画で流れを確認できます。
-        </p>
+        <h2>完成イメージとリール動画</h2>
+       
       </div>
 
       <div class="media-grid">
         <article class="media-card reveal">
           <h3>完成画像</h3>
-          <img src="images/IMG_7827.png" alt="完成した刺し子のメッシュポーチ" class="finished-image">
+          <img src="images/IMG_7827.jpg" alt="完成した刺し子のメッシュポーチ" class="finished-image">
         </article>
 
         <article class="media-card reveal">
-          <h3>制作動画（Instagramリール）</h3>
+          <h3>Instagramリール</h3>
           <div class="reel-wrapper">
             <blockquote
               class="instagram-media"
@@ -844,40 +906,7 @@
     </div>
   </section>
 
-  <section class="section-soft">
-    <div class="container">
-      <div class="sec-head reveal">
-        <p class="sec-eyebrow">Basic Information</p>
-        <h2>まずは作品の概要を、ひと目で。</h2>
-        <p class="sec-desc">
-          作品名・制作時間・クリエイター情報を先に整理して、全体像がすぐつかめるようにしました。
-        </p>
-      </div>
-
-      <div class="info-band">
-        <article class="info-item reveal">
-          <div class="label">作品名</div>
-          <div class="value">100均ポーチが大変身！<br>刺し子のメッシュポーチ</div>
-        </article>
-
-        <article class="info-item reveal">
-          <div class="label">クリエイター</div>
-          <div class="value">刺し子どり</div>
-        </article>
-
-        <article class="info-item reveal">
-          <div class="label">Instagram</div>
-          <div class="value"><a href="https://www.instagram.com/sashikodori/" target="_blank" rel="noopener noreferrer">@sashikodori</a></div>
-        </article>
-
-        <article class="info-item reveal">
-          <div class="label">制作時間</div>
-          <div class="value">約1時間</div>
-        </article>
-      </div>
-    </div>
-  </section>
-
+ 
   <section>
     <div class="container">
       <div class="sec-head reveal">
@@ -897,7 +926,7 @@
 
           <!-- ▼ 長方形タイプ画像。ここだけ差し替えればOK -->
           <div class="size-card-image">
-            <img src="images/IMG_7634.png" alt="長方形タイプのメッシュポーチ">
+            <img src="images/IMG_7634.jpg" alt="長方形タイプのメッシュポーチ">
           </div>
 
           <div>
@@ -947,7 +976,7 @@
             <div class="material-box">
               <!-- ▼ メッシュポーチ画像。ここだけ差し替えればOK -->
               <div class="material-image">
-                <img src="images/IMG_7630.png" alt="メッシュポーチ">
+                <img src="images/IMG_7630.jpg" alt="メッシュポーチ">
               </div>
               <div>
                 <h4>メッシュポーチ</h4>
@@ -958,7 +987,7 @@
             <div class="material-box">
               <!-- ▼ こぎん糸画像。ここだけ差し替えればOK -->
               <div class="material-image">
-                <img src="images/IMG_7652.png" alt="こぎん糸">
+                <img src="images/IMG_7652.jpg" alt="こぎん糸">
               </div>
               <div>
                 <h4>糸</h4>
@@ -969,7 +998,7 @@
             <div class="material-box">
               <!-- ▼ こぎん針画像。ここだけ差し替えればOK -->
               <div class="material-image">
-                <img src="images/IMG_7655.png" alt="こぎん針">
+                <img src="images/IMG_7655.jpg" alt="こぎん針">
               </div>
               <div>
                 <h4>針</h4>
@@ -977,17 +1006,19 @@
               </div>
             </div>
           </div>
+          <p class="small-note">
+            ※ 100均の刺し子糸は意外と細いため、今回は太めのこぎん糸と、
+            先のとがっていないこぎん針を使ってみました。
+          </p>
         </article>
 
         <article class="card reveal">
           <h3>その他用意する道具</h3>
           <ul>
             <li>・糸切はさみ</li>
+            <li>・その他必要に応じて</li>
           </ul>
-          <p class="small-note">
-            ※ 100均の刺し子糸は意外と細いため、今回は太めのこぎん糸と、
-            先のとがっていないこぎん針を使ってみました。
-          </p>
+         
         </article>
       </div>
     </div>
@@ -998,31 +1029,80 @@
       <div class="sec-head reveal">
         <p class="sec-eyebrow">How To</p>
         <h2>作り方ステップ</h2>
-        <p class="sec-desc">
-          動画の内容をテキスト化したものです。先にリールで流れを見ておくと、手順がより理解しやすくなります。
-        </p>
+       
       </div>
 
       <div class="steps-wrap">
-        <ol class="steps reveal">
-          <li>
-            ファスナー下、右側をスタートラインとします。糸を50cm程度にカットし、
-            糸端を玉留め処理して、一目ずつなみ縫いの要領で進みます。
-          </li>
-          <li>
-            2色使うので、一段置きにポーチを一周するように進みます。
-          </li>
-          <li>
-            糸のつなぎは「はた結び」をします。結び目はメッシュの下に隠れるように、
-            糸の引き加減で調節します。
-          </li>
-          <li>
-            2色めは、一目ズレるようにスタートして、ポーチを一周回ります。
-          </li>
-          <li>
-            刺し終わりはポーチの端の部分に玉留めして、糸を切ります。
-          </li>
-        </ol>
+     <ol class="steps reveal">
+  <li>
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <div class="step-text">
+          ファスナー下、右内側をスタートラインとします。糸を50cm程度にカットし、
+          糸端を玉留め処理して、一目ずつなみ縫いの要領で進みます。
+        </div>
+      </div>
+    </div>
+  </li>
+
+  <li>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <div class="step-text">
+          2色使うので、一段置きにポーチを一周するように進みます。
+        </div>
+      </div>
+    </div>
+  </li>
+
+  <li>
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <div class="step-text">
+          糸のつなぎは「はた結び」をします。結び目はメッシュの下に隠れるように、
+          糸の引き加減で調節します。
+        </div>
+
+        <!-- ▼ ステップ3の説明画像はここに入れます -->
+        <div class="step-image">
+          <img src="images/sasikodori_2.jpg" alt="はた結びの説明画像">
+        </div>
+
+        <div class="step-caption">
+          ★ ここが一番のポイントです
+        </div>
+
+        <div class="step-note">
+                  </div>
+      </div>
+    </div>
+  </li>
+
+  <li>
+    <div class="step-card">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <div class="step-text">
+          2色めは、一目ズレるようにスタートして、ポーチを一周回ります。
+        </div>
+      </div>
+    </div>
+  </li>
+
+  <li>
+    <div class="step-card">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <div class="step-text">
+          刺し終わりはポーチの端の部分に玉留めして、糸を切ります。
+        </div>
+      </div>
+    </div>
+  </li>
+</ol>
 
         <aside class="side-note reveal">
           <h3>進めるときのポイント</h3>
@@ -1031,7 +1111,7 @@
             2色目がぐっとやりやすくなります。
           </p>
           <ul>
-            <li>糸は長すぎると絡みやすいので約50cmが目安です。</li>
+            <li>糸は長すぎると絡みやすいので、一本約50cmが目安です。</li>
             <li>結び目は表から目立たない位置に隠す意識で進めます。</li>
             <li>2色めは「一目ずらす」が見た目のポイントです。</li>
           </ul>
@@ -1052,10 +1132,10 @@
 
       <div class="tips">
         <article class="tip reveal">
-          <h3>図案が歪まず、初心者でも刺しやすい</h3>
+          <h3>下図描きがいらず、初心者でも刺しやすい</h3>
           <p>
-            メッシュの穴が等間隔なので、初心者の方でも図案が歪まずに刺せます。
-            下書きをしなくても目を拾いやすく、整った見た目に仕上げやすいのが魅力です。
+            メッシュの穴が等間隔なので、図案なしでも簡単に刺せます。
+            目を拾いやすく、整った見た目に仕上げやすいのが魅力です。
           </p>
         </article>
 
