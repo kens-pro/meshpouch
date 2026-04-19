@@ -1230,6 +1230,11 @@
     max-width: 180px;
   }
 }
+.kit-choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
   </style>
 </head>
 <body>
@@ -1238,9 +1243,13 @@
     Square購入URL
   -->
   <script>
-    const SQUARE_URL = "https://example.square.site/";
-    const LINE_URL = "https://lin.ee/ZHB8whx";
-  </script>
+  const SQUARE_URL = "https://example.square.site/";
+  const SQUARE_URL_01 = "https://example.square.site/product/basic1";
+  const SQUARE_URL_02 = "https://example.square.site/product/basic2";
+  const SQUARE_URL_03 = "https://example.square.site/product/hana1";
+  const SQUARE_URL_04 = "https://example.square.site/product/hana2";
+  const LINE_URL = "https://lin.ee/ZHB8whx";
+</script>
 
   <div class="petals" aria-hidden="true">
     <span class="petal"></span><span class="petal"></span><span class="petal"></span>
@@ -1689,46 +1698,77 @@
     </p>
   </div>
 
-  <div class="kit-choice-grid">
-    <article class="kit-choice-card">
-      <div class="kit-choice-image">
-        <img src="images/choice-01.jpg" alt="メッシュポーチキット デザイン01">
-        <span class="kit-choice-number">01</span>
+<div class="kit-choice-grid">
+
+  <!-- ① ベーシック1 -->
+  <article class="kit-choice-card">
+    <div class="kit-choice-image">
+      <img src="images/basic-01.jpg" alt="ベーシックデザイン1">
+      <span class="kit-choice-number">01</span>
+    </div>
+    <div class="kit-choice-body">
+      <h5>ベーシック①</h5>
+      <p class="kit-choice-text">
+        はじめてでも安心のシンプルデザイン。糸色：青と黄
+      </p>
+      <div class="kit-choice-actions">
+        <a class="btn-square" id="squareBtn01" href="#">🛒 購入する</a>
       </div>
+    </div>
+  </article>
 
-      <div class="kit-choice-body">
-        <h5>ベーシックデザイン</h5>
-        <p class="kit-choice-text">
-          まずはシンプルに始めたい方へ。<br>
-          はじめてでも完成しやすい基本デザインです。
-        </p>
-
-        <div class="kit-choice-actions">
-          <a class="btn-square kit-choice-btn" id="squareBtn01" href="#" target="_blank" rel="noopener noreferrer">🛒 クレジットカードで購入</a>
-          <a class="kit-choice-line" href="https://lin.ee/ZHB8whx" target="_blank" rel="noopener noreferrer">💬 LINEでこのセットを相談</a>
-        </div>
+  <!-- ② ベーシック2 -->
+  <article class="kit-choice-card">
+    <div class="kit-choice-image">
+      <img src="images/basic-02.jpg" alt="ベーシックデザイン2">
+      <span class="kit-choice-number">02</span>
+    </div>
+    <div class="kit-choice-body">
+      <h5>ベーシック②</h5>
+      <p class="kit-choice-text">
+        はじめてでも安心のシンプルデザイン。糸色：赤と黄
+      </p>
+      <div class="kit-choice-actions">
+        <a class="btn-square" id="squareBtn02" href="#">🛒 購入する</a>
       </div>
-    </article>
+    </div>
+  </article>
 
-    <article class="kit-choice-card">
-      <div class="kit-choice-image">
-        <img src="images/choice-02.jpg" alt="メッシュポーチキット デザイン02">
-        <span class="kit-choice-number">02</span>
+  <!-- ③ 花刺し1 -->
+  <article class="kit-choice-card">
+    <div class="kit-choice-image">
+      <img src="images/hana-01.jpg" alt="花刺しデザイン1">
+      <span class="kit-choice-number">03</span>
+    </div>
+    <div class="kit-choice-body">
+      <h5>花刺し①</h5>
+      <p class="kit-choice-text">
+        ワンランク上の華やかデザイン。糸色：青
+      </p>
+      <div class="kit-choice-actions">
+        <a class="btn-square" id="squareBtn03" href="#">🛒 購入する</a>
       </div>
+    </div>
+  </article>
 
-      <div class="kit-choice-body">
-        <h5>花刺しアレンジデザイン</h5>
-        <p class="kit-choice-text">
-          花刺しの雰囲気を楽しみたい方へ。<br>
-          一歩進んだアレンジを味わいたい方におすすめです。
-        </p>
-
-        <div class="kit-choice-actions">
-          <a class="btn-square kit-choice-btn" id="squareBtn02" href="#" target="_blank" rel="noopener noreferrer">🛒 クレジットカードで購入</a>
-          <a class="kit-choice-line" href="https://lin.ee/ZHB8whx" target="_blank" rel="noopener noreferrer">💬 LINEでこのセットを相談</a>
-        </div>
+  <!-- ④ 花刺し2 -->
+  <article class="kit-choice-card">
+    <div class="kit-choice-image">
+      <img src="images/hana-02.jpg" alt="花刺しデザイン2">
+      <span class="kit-choice-number">04</span>
+    </div>
+    <div class="kit-choice-body">
+      <h5>花刺し②</h5>
+      <p class="kit-choice-text">
+        ワンランク上の華やかデザイン。糸色：赤
+      </p>
+      <div class="kit-choice-actions">
+        <a class="btn-square" id="squareBtn04" href="#">🛒 購入する</a>
       </div>
-    </article>
+    </div>
+  </article>
+
+</div>
   </div>
 </div>
         <p class="kit-note">
@@ -1736,7 +1776,7 @@
           ※ 不明点がある方は、先に公式LINEからご相談いただけます。
         </p>
 <p style="margin-top:20px; font-size:.95rem; color:rgba(250,248,245,.9);">
-まずは1つ、気軽に作ってみてください。<br>
+まずは1つ、気軽に作ってみてください。まよったらベーシックがおススメです<br>
 「できた」が、きっと次につながります。
 </p>
 
@@ -1814,9 +1854,14 @@
     }, { passive: true });
 
     document.getElementById('squareBtn').href = SQUARE_URL;
-    document.getElementById('lineBtn').href = LINE_URL;
-    document.getElementById('lineBtnBottom').href = LINE_URL;
-    document.getElementById('stickyBtn').href = SQUARE_URL;
+document.getElementById('squareBtn01').href = SQUARE_URL_01;
+document.getElementById('squareBtn02').href = SQUARE_URL_02;
+document.getElementById('squareBtn03').href = SQUARE_URL_03;
+document.getElementById('squareBtn04').href = SQUARE_URL_04;
+
+document.getElementById('lineBtn').href = LINE_URL;
+document.getElementById('lineBtnBottom').href = LINE_URL;
+document.getElementById('stickyBtn').href = SQUARE_URL;
   </script>
   <script async src="https://www.instagram.com/embed.js"></script>
 </body>
