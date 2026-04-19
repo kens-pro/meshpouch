@@ -1025,6 +1025,211 @@
     justify-items: start;
   }
 }
+/* ▼ 花刺しボーナス */
+.hana-bonus {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  border: 1px solid rgba(229,166,177,.22);
+  background: linear-gradient(180deg, rgba(212,129,140,.10), rgba(250,248,245,.02));
+  padding: 18px;
+}
+
+.hana-bonus-image {
+  width: 100%;
+  max-width: 160px;
+  aspect-ratio: 9 / 16;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(250,248,245,.12);
+  background: rgba(255,255,255,.04);
+  box-shadow: 0 8px 18px rgba(0,0,0,.18);
+}
+
+.hana-bonus-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hana-bonus-copy {
+  min-width: 0;
+}
+
+.hana-bonus-label {
+  font-size: .74rem;
+  color: var(--c-sakura-2);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-family: var(--font-latin);
+  margin-bottom: 6px;
+}
+
+.hana-bonus h4 {
+  font-family: var(--font-serif);
+  font-size: 1.12rem;
+  color: var(--c-gold);
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.hana-bonus p {
+  font-size: .93rem;
+  color: rgba(250,248,245,.88);
+  line-height: 1.9;
+  margin-bottom: 8px;
+}
+
+.hana-bonus-note {
+  font-size: .82rem !important;
+  color: var(--c-muted) !important;
+  margin-bottom: 0 !important;
+}
+
+/* ▼ デザイン選択CTA */
+.kit-choice-wrap {
+  margin-top: 26px;
+  padding-top: 10px;
+}
+
+.kit-choice-head {
+  margin-bottom: 18px;
+}
+
+.kit-choice-label {
+  font-size: .74rem;
+  color: var(--c-sakura-2);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-family: var(--font-latin);
+  margin-bottom: 6px;
+}
+
+.kit-choice-head h4 {
+  font-family: var(--font-serif);
+  font-size: 1.18rem;
+  color: var(--c-gold);
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.kit-choice-head p {
+  font-size: .92rem;
+  color: rgba(250,248,245,.86);
+  line-height: 1.9;
+}
+
+.kit-choice-head p span {
+  color: var(--c-muted);
+  font-size: .84rem;
+}
+
+.kit-choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.kit-choice-card {
+  border: 1px solid rgba(250,248,245,.10);
+  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+  overflow: hidden;
+  box-shadow: 0 14px 30px rgba(0,0,0,.18);
+}
+
+.kit-choice-image {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(250,248,245,.08);
+  background: rgba(255,255,255,.03);
+}
+
+.kit-choice-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.kit-choice-number {
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  font-family: var(--font-latin);
+  font-size: 2.1rem;
+  line-height: 1;
+  color: rgba(250,248,245,.92);
+  text-shadow: 0 2px 10px rgba(0,0,0,.28);
+}
+
+.kit-choice-body {
+  padding: 20px 18px 18px;
+}
+
+.kit-choice-body h5 {
+  font-family: var(--font-serif);
+  font-size: 1.08rem;
+  color: var(--c-gold);
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.kit-choice-text {
+  font-size: .9rem;
+  color: rgba(250,248,245,.84);
+  line-height: 1.85;
+  margin-bottom: 16px;
+}
+
+.kit-choice-actions {
+  display: grid;
+  gap: 10px;
+}
+
+.kit-choice-btn {
+  width: 100%;
+  min-width: 0;
+  text-align: center;
+}
+
+.kit-choice-line {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 18px;
+  border: 1px solid rgba(250,248,245,.12);
+  color: rgba(250,248,245,.88);
+  text-decoration: none;
+  background: rgba(255,255,255,.015);
+  transition: .25s var(--ease);
+}
+
+.kit-choice-line:hover {
+  border-color: rgba(6,199,85,.45);
+  color: #fff;
+  background: rgba(6,199,85,.08);
+}
+
+@media (max-width: 860px) {
+  .kit-choice-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .hana-bonus {
+    grid-template-columns: 1fr;
+  }
+
+  .hana-bonus-image {
+    max-width: 180px;
+  }
+}
   </style>
 </head>
 <body>
@@ -1449,7 +1654,83 @@
             </ul>
           </article>
         </div>
+<div class="hana-bonus">
+  <div class="hana-bonus-image">
+    <img src="images/hanazashi-sample.jpg" alt="花刺しアレンジをしたメッシュポーチ">
+  </div>
 
+  <div class="hana-bonus-copy">
+    <p class="hana-bonus-label">Bonus Movie</p>
+    <h4>さらにステップアップしたい方へ</h4>
+    <p>
+      このキットには、基本の刺し方動画に加えて、
+      <strong>「花刺し」の刺し方動画</strong>もお付けします。
+    </p>
+    <p>
+      まずはシンプルに完成させて、
+      「もっとやってみたい」と思った方が、
+      次の一歩を楽しめるようにご用意しました。
+    </p>
+    <p class="hana-bonus-note">
+      ※ 花刺しは応用アレンジとしてお楽しみいただけます。
+    </p>
+    <p class="hana-bonus-note">
+      ※ キットのメッシュポーチはひとつですので、ご購入時にデザインをお選びください。
+    </p>
+  </div>
+</div>
+<div class="kit-choice-wrap">
+  <div class="kit-choice-head">
+    <p class="kit-choice-label">Choose Your Design</p>
+    <h4>お好きなデザインをお選びください</h4>
+    <p>
+      花刺しアレンジを追加したことにより、キットは2つのデザインからお選びいただけます。<br>
+      <span>※ キットのメッシュポーチはひとつですので、ご購入時にデザインをお選びください。</span>
+    </p>
+  </div>
+
+  <div class="kit-choice-grid">
+    <article class="kit-choice-card">
+      <div class="kit-choice-image">
+        <img src="images/choice-01.jpg" alt="メッシュポーチキット デザイン01">
+        <span class="kit-choice-number">01</span>
+      </div>
+
+      <div class="kit-choice-body">
+        <h5>ベーシックデザイン</h5>
+        <p class="kit-choice-text">
+          まずはシンプルに始めたい方へ。<br>
+          はじめてでも完成しやすい基本デザインです。
+        </p>
+
+        <div class="kit-choice-actions">
+          <a class="btn-square kit-choice-btn" id="squareBtn01" href="#" target="_blank" rel="noopener noreferrer">🛒 クレジットカードで購入</a>
+          <a class="kit-choice-line" href="https://lin.ee/ZHB8whx" target="_blank" rel="noopener noreferrer">💬 LINEでこのセットを相談</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="kit-choice-card">
+      <div class="kit-choice-image">
+        <img src="images/choice-02.jpg" alt="メッシュポーチキット デザイン02">
+        <span class="kit-choice-number">02</span>
+      </div>
+
+      <div class="kit-choice-body">
+        <h5>花刺しアレンジデザイン</h5>
+        <p class="kit-choice-text">
+          花刺しの雰囲気を楽しみたい方へ。<br>
+          一歩進んだアレンジを味わいたい方におすすめです。
+        </p>
+
+        <div class="kit-choice-actions">
+          <a class="btn-square kit-choice-btn" id="squareBtn02" href="#" target="_blank" rel="noopener noreferrer">🛒 クレジットカードで購入</a>
+          <a class="kit-choice-line" href="https://lin.ee/ZHB8whx" target="_blank" rel="noopener noreferrer">💬 LINEでこのセットを相談</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</div>
         <p class="kit-note">
           ※ 内容の細かな仕様は、仕入れ状況に応じて一部変更となる場合があります。<br>
           ※ 不明点がある方は、先に公式LINEからご相談いただけます。
